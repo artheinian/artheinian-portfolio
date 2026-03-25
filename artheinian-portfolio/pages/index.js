@@ -1,71 +1,58 @@
-import { useInView } from "../../hooks";
+"use client";
+import { useCallback } from "react";
 
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-export function FadeIn({ children, delay = 0, direction = "up", style = {} }) {
-  const [ref, visible] = useInView();
-  const transforms = {
-    up:    visible ? "translateY(0) scale(1)"  : "translateY(36px) scale(0.97)",
-    left:  visible ? "translateX(0) scale(1)"  : "translateX(-44px) scale(0.97)",
-    right: visible ? "translateX(0) scale(1)"  : "translateX(44px) scale(0.97)",
-  };
+export default function Portfolio() {
+  const nav = useCallback((id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
-    <div
-      ref={ref}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: transforms[direction],
-        filter: visible ? "blur(0)" : "blur(5px)",
-        transition: `opacity .75s cubic-bezier(.16,1,.3,1) ${delay}s,
-                     transform .75s cubic-bezier(.16,1,.3,1) ${delay}s,
-                     filter .6s ease ${delay}s`,
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+    <div style={{ background: "#fff", color: "#1A1A2E", fontFamily: "Georgia,serif", minHeight: "100vh", overflowX: "hidden" }}>
 
-// ── SkillBar ──────────────────────────────────────────────────────────────────
-export function SkillBar({ name, level, delay }) {
-  const [ref, visible] = useInView(0.1);
-  return (
-    <div
-      ref={ref}
-      style={{
-        marginBottom: 14,
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateX(0)" : "translateX(-18px)",
-        filter: visible ? "blur(0)" : "blur(3px)",
-        transition: `opacity .5s ease ${delay}s, transform .5s ease ${delay}s, filter .4s ease ${delay}s`,
-      }}
-    >
-      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
-        <span style={{ fontSize: 12, fontFamily: "monospace", color: "#1A1A2E" }}>{name}</span>
-        <span style={{ fontSize: 10, fontFamily: "monospace", color: "#2A5A7A" }}>{level}%</span>
-      </div>
-      <div style={{ height: 6, borderRadius: 99, background: "#E8EEF4", overflow: "hidden" }}>
-        <div
-          style={{
-            height: "100%", borderRadius: 99,
-            width: visible ? `${level}%` : "0%",
-            background: "linear-gradient(90deg,#1A6A9A,#4A9FCC)",
-            transition: `width 1.1s cubic-bezier(.4,0,.2,1) ${delay + .1}s`,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
+      {/* ── Decorative chrome ── */}
+      <div style={{ position: "fixed", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg,transparent,#1A6A9A,transparent)", zIndex: 50 }} />
+      <div style={{ pointerEvents: "none", position: "fixed", inset: 0, zIndex: 0, opacity: 0.025, backgroundImage: "linear-gradient(#1A6A9A 1px,transparent 1px),linear-gradient(90deg,#1A6A9A 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
 
-// ── SectionLabel ──────────────────────────────────────────────────────────────
-export function SectionLabel({ n, label }) {
-  return (
-    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-      <div style={{ height: 1, width: 20, background: "#1A6A9A" }} />
-      <span style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.45em", textTransform: "uppercase", color: "#1A6A9A" }}>
-        {n} — {label}
-      </span>
+      {/* ── Layout ── */}
+      <Navbar onNav={nav} />
+      <Hero onNav={nav} />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Education />
+      <Contact />
+      <Footer />
+
+      {/* ── Global styles ── */}
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(26px) scale(.97); filter: blur(5px); }
+          to   { opacity: 1; transform: translateY(0)    scale(1);   filter: blur(0);   }
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        ::selection { background: #1A6A9A22; color: #1A1A2E; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #fff; }
+        ::-webkit-scrollbar-thumb { background: #D0DCE8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1A6A9A; }
+        @media (max-width: 768px) {
+          section { padding-left: 20px !important; padding-right: 20px !important; }
+          nav     { padding-left: 16px !important; padding-right: 16px !important; }
+          footer  { padding-left: 20px !important; padding-right: 20px !important; }
+          .mobile-menu-btn { display: block !important; }
+          nav ul  { display: none !important; }
+        }
+      `}</style>
     </div>
   );
 }

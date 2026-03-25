@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FadeIn, SectionLabel } from "../../ui/ui";
+import { FadeIn, SectionLabel } from "../ui/ui";
 
 export default function Contact() {
     const [copied, setCopied] = useState(false);

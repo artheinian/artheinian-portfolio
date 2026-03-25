@@ -1,5 +1,5 @@
-import { COURSES } from "../../data/data";
-import { FadeIn, SectionLabel } from "../../ui/ui";
+import { COURSES } from "../data/data";
+import { FadeIn, SectionLabel } from "../ui/ui";
 
 export default function Education() {
     return (

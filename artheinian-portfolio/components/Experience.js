@@ -1,5 +1,5 @@
-import { TIMELINE } from "../../data/data";
-import { FadeIn, SectionLabel } from "../../ui/ui";
+import { TIMELINE } from "../data/data";
+import { FadeIn, SectionLabel } from "../ui/ui";
 
 const DOT_COLOR = { edu: "#1A6A9A", project: "#2A8AB0", work: "#2A5A7A" };
 

@@ -1,5 +1,5 @@
-import { PROJECTS } from "../../data/data";
-import { FadeIn, SectionLabel } from "../../ui/ui";
+import { PROJECTS } from "../data/data";
+import { FadeIn, SectionLabel } from "../ui/ui";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {

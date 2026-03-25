@@ -85,7 +85,8 @@ export const PROJECTS = [
             "Planned optional local café discovery and review-sharing features to expand the app beyond personal trackin",
         ],
         github: "https://github.com/artheinian/cafe-log",
-        preview: "dashboard",
+        note: "IN PRODUCTION!!!",
+        preview: ""
     },
 ];
 

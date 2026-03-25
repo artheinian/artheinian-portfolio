@@ -7,6 +7,9 @@ const PREVIEWS = { phone: PhonePreview, desktop: DesktopPreview, dashboard: Dash
 export default function ProjectCard({ project, index }) {
     const [expanded, setExpanded] = useState(false);
     const [ref, visible] = useInView(0.1);
+
+    if (!project) return null;
+
     const Preview = PREVIEWS[project.preview];
 
     return (

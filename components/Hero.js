@@ -190,7 +190,7 @@ export default function Hero({ onNav }) {
                             color: "#1A6A9A",
                         }}
                     >
-                        Full-Stack Developer
+                        Software Developer
                     </span>
                 </div>
 

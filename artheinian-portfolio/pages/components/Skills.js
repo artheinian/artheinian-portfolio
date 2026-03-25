@@ -1,5 +1,5 @@
-import { SKILLS } from "../data/data";
-import { FadeIn, SectionLabel } from "../ui/ui";
+import { SKILLS } from "../../data/data";
+import { FadeIn, SectionLabel } from "../../ui/ui";
 
 export default function Skills() {
     return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { NAV_ITEMS } from "../data/data";
-import { useScrolled, useScrollSpy } from "../hooks/hooks";
+import { NAV_ITEMS } from "../../data/data";
+import { useScrolled, useScrollSpy } from "../../hooks/hooks";
 
 export default function Navbar({ onNav }) {
     const [menuOpen, setMenuOpen] = useState(false);

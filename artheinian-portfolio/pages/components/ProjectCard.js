@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useInView } from "../hooks/hooks";
-import { PhonePreview, DesktopPreview, DashboardPreview, ImagePreview, GalleryPreview } from "../preview/preview";
+import { useInView } from "../../hooks/hooks";
+import { PhonePreview, DesktopPreview, DashboardPreview, ImagePreview, GalleryPreview } from "../../preview/preview";
 
 const PREVIEWS = { phone: PhonePreview, desktop: DesktopPreview, dashboard: DashboardPreview, image: ImagePreview, gallery: GalleryPreview };
 

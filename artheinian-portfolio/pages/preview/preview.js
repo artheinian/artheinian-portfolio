@@ -430,3 +430,65 @@ export function ImagePreview({ project }) {
         </div>
     );
 }
+
+
+export function GalleryPreview({ project }) {
+    const [current, setCurrent] = useState(0);
+    const images = project.previewImages || [];
+
+    return (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+            <div
+                style={{
+                    height: 250,
+                    borderRadius: 8,
+                    border: "1px solid #E0ECF5",
+                    overflow: "hidden",
+                    background: "#F8F9FB",
+                    boxShadow: `0 4px 24px ${project.accent}18`,
+                }}
+            >
+                <img
+                    src={images[current]}
+                    alt={`${project.title} screenshot ${current + 1}`}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        display: "block",
+                    }}
+                />
+            </div>
+
+            <div style={{ display: "flex", gap: 5 }}>
+                {images.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        style={{
+                            width: i === current ? 16 : 12,
+                            height: 12,
+                            borderRadius: 999,
+                            border: "none",
+                            cursor: "pointer",
+                            background: i === current ? project.accent : "#DDE6EF",
+                            transition: "all .2s",
+                        }}
+                    />
+                ))}
+            </div>
+
+            <p
+                style={{
+                    color: "#BBB",
+                    fontSize: 9,
+                    fontFamily: "monospace",
+                    letterSpacing: "0.3em",
+                    textTransform: "uppercase",
+                }}
+            >
+                App Preview
+            </p>
+        </div>
+    );
+}

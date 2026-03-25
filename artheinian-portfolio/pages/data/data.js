@@ -1,16 +1,25 @@
 export const SKILLS = {
     Languages: [
-        { name: "C#", level: 90 }, { name: "JavaScript", level: 88 }, { name: "TypeScript", level: 80 },
-        { name: "Python", level: 78 }, { name: "Dart", level: 82 }, { name: "Java", level: 72 },
-        { name: "SQL", level: 85 }, { name: "HTML/CSS", level: 92 },
+        { name: "C#" }, { name: "JavaScript" }, { name: "TypeScript" },
+        { name: "Python" }, { name: "Dart" }, { name: "Java" },
+        { name: "SQL" }, { name: "HTML/CSS" },
     ],
-    Frameworks: [
-        { name: "React / Next.js", level: 88 }, { name: "ASP.NET Core", level: 85 }, { name: "Flutter", level: 83 },
-        { name: "Django", level: 75 }, { name: "Entity Framework", level: 80 }, { name: "Node.js", level: 76 },
+    "Frameworks and Libraries": [
+        { name: "React / Next.js" }, { name: "ASP.NET Core" }, { name: "Flutter" },
+        { name: "Django" }, { name: "Entity Framework" }, { name: "Node.js" },
+        { name: "Blazor" }, { name: "Bootstrap" }, { name: "Tailwind" },
+        { name: "Material UI" },
     ],
     "Tools & DBs": [
-        { name: "Git / GitHub", level: 92 }, { name: "PostgreSQL", level: 82 }, { name: "MySQL", level: 84 },
-        { name: "Figma", level: 78 }, { name: "Postman", level: 85 }, { name: "Android Studio", level: 70 },
+        { name: "Git / GitHub" }, { name: "PostgreSQL" }, { name: "MySQL" },
+        { name: "Figma" }, { name: "Postman" }, { name: "Android Studio" },
+        { name: "Visual Studio" }, { name: "Visual Studio Code" }, { name: "LINQ" },
+        { name: "Apache Tomcat" }, { name: "IntelliJ IDEA" }, { name: "VMWare" },
+    ],
+    "General": [
+        { name: "Customer Service" }, { name: "Communication" }, { name: "Teamwork" },
+        { name: "Time Management" }, { name: "Problem Solving" }, { name: "Multitasking" },
+        { name: "Adaptability" }, { name: "Working Under Pressure" },
     ],
 };
 
@@ -43,12 +52,13 @@ export const PROJECTS = [
             "Integrated Spotify Web API with OAuth2.0 for track metadata & playlist CRUD",
             "Respected API rate limits and scope constraints in a real production environment",
         ],
-        github: "https://github.com/artheinian",
-        preview: "phone",
-        previewScreens: [
-            { label: "Now Playing", icon: "🎵", desc: "Swipe left to skip, right to save" },
-            { label: "My Playlist", icon: "📋", desc: "3 tracks saved" },
-        ],
+        github: "https://github.com/artheinian/swipify",
+        preview: "gallery",
+        previewImages: [
+            "/images/swipify.png",
+            "/images/swipify-home-page.png",
+            "/images/swipify-swiping-page.png"
+        ]
     },
     {
         id: "pomodoro", title: "Pomodoro Timer", tag: "Hackathon - HackED", year: "Feb 2025", accent: "#FF6B6B",
@@ -65,7 +75,7 @@ export const PROJECTS = [
         previewImage: "/images/pomoai.png",
     },
     {
-        id: "cafe-log", title: "Cafe-Log", tag: "Web app", year: "Jan-Present 2026", accent: "#c4a84c",
+        id: "cafe-log", title: "Cafe-Log", tag: "Web app", year: "Jan 2026 - Present", accent: "#c4a84c",
         tech: ["Javascript", "Next.JS", "React", "Tailwind", "HTML", "CSS"],
         summary: "Local café  drink tracker ",
         description: "Personal café drink tracking app where users can save and organize drinks they have tried, rate them, write notes, and explore cafés.",

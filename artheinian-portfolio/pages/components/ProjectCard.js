@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useInView } from "../hooks/hooks";
-import { PhonePreview, DesktopPreview, DashboardPreview, ImagePreview } from "../preview/preview";
+import { PhonePreview, DesktopPreview, DashboardPreview, ImagePreview, GalleryPreview } from "../preview/preview";
 
-const PREVIEWS = { phone: PhonePreview, desktop: DesktopPreview, dashboard: DashboardPreview, image: ImagePreview };
+const PREVIEWS = { phone: PhonePreview, desktop: DesktopPreview, dashboard: DashboardPreview, image: ImagePreview, gallery: GalleryPreview };
 
 export default function ProjectCard({ project, index }) {
     const [expanded, setExpanded] = useState(false);

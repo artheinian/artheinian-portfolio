@@ -86,7 +86,7 @@ export const PROJECTS = [
         ],
         github: "https://github.com/artheinian/cafe-log",
         note: "IN PRODUCTION!!!",
-        preview: ""
+        preview: null
     },
 ];
 

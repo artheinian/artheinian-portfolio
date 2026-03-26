@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hero({ onNav }) {
     const [showAboutCard, setShowAboutCard] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreen = () => setIsMobile(window.innerWidth <= 768);
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
+        return () => window.removeEventListener("resize", checkScreen);
+    }, []);
 
     return (
         <section
@@ -12,19 +20,22 @@ export default function Hero({ onNav }) {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                padding: "96px 80px 80px",
+                padding: isMobile ? "96px 24px 56px" : "96px 80px 80px",
                 overflow: "hidden",
+                gap: isMobile ? 24 : 0,
             }}
         >
-            {/* More About Me button */}
             {!showAboutCard && (
                 <div
                     style={{
-                        position: "absolute",
-                        right: 60,
-                        top: "50%",
-                        transform: "translateY(-50%)",
+                        position: isMobile ? "static" : "absolute",
+                        right: isMobile ? "auto" : 60,
+                        top: isMobile ? "auto" : "50%",
+                        transform: isMobile ? "none" : "translateY(-50%)",
                         zIndex: 2,
+                        alignSelf: isMobile ? "flex-start" : "auto",
+                        marginTop: isMobile ? 8 : 0,
+                        order: isMobile ? 2 : 0,
                     }}
                 >
                     <button
@@ -48,13 +59,13 @@ export default function Hero({ onNav }) {
                 </div>
             )}
 
-            {/* Slide-in card */}
             <div
                 style={{
-                    position: "absolute",
-                    right: 60,
-                    top: "50%",
-                    width: 290,
+                    position: isMobile ? "static" : "absolute",
+                    right: isMobile ? "auto" : 60,
+                    top: isMobile ? "auto" : "50%",
+                    width: isMobile ? "100%" : 290,
+                    maxWidth: isMobile ? 360 : "none",
                     padding: "20px 22px",
                     borderRadius: 16,
                     background: "rgba(248,249,251,0.96)",
@@ -62,12 +73,18 @@ export default function Hero({ onNav }) {
                     boxShadow: "0 18px 40px rgba(26, 106, 154, 0.08)",
                     backdropFilter: "blur(8px)",
                     zIndex: 3,
-                    transform: showAboutCard
-                        ? "translateY(-50%) translateX(0)"
-                        : "translateY(-50%) translateX(120%)",
+                    transform: isMobile
+                        ? showAboutCard
+                            ? "translateY(0)"
+                            : "translateY(-8px)"
+                        : showAboutCard
+                            ? "translateY(-50%) translateX(0)"
+                            : "translateY(-50%) translateX(120%)",
                     opacity: showAboutCard ? 1 : 0,
                     pointerEvents: showAboutCard ? "auto" : "none",
                     transition: "transform .45s cubic-bezier(.16,1,.3,1), opacity .3s ease",
+                    alignSelf: isMobile ? "stretch" : "auto",
+                    order: isMobile ? 3 : 0,
                 }}
             >
                 <div
@@ -117,8 +134,8 @@ export default function Hero({ onNav }) {
                         src="/images/MEE.jpg"
                         alt="Artheinian Ramos"
                         style={{
-                            width: 180,
-                            height: 180,
+                            width: isMobile ? 140 : 180,
+                            height: isMobile ? 140 : 180,
                             objectFit: "cover",
                             borderRadius: "50%",
                             border: "4px solid #F8F9FB",
@@ -170,7 +187,15 @@ export default function Hero({ onNav }) {
                 </button>
             </div>
 
-            <div style={{ position: "relative", zIndex: 1, maxWidth: 800 }}>
+            <div
+                style={{
+                    position: "relative",
+                    zIndex: 1,
+                    maxWidth: isMobile ? "100%" : 800,
+                    order: 1,
+                    paddingRight: isMobile ? 0 : 340,
+                }}
+            >
                 <div
                     style={{
                         display: "flex",
@@ -196,7 +221,7 @@ export default function Hero({ onNav }) {
 
                 <h1
                     style={{
-                        fontSize: "clamp(3rem,9vw,8rem)",
+                        fontSize: isMobile ? "clamp(2.4rem, 14vw, 4.2rem)" : "clamp(3rem,9vw,8rem)",
                         fontWeight: "bold",
                         lineHeight: 0.92,
                         letterSpacing: "-0.02em",
@@ -213,7 +238,7 @@ export default function Hero({ onNav }) {
 
                 <p
                     style={{
-                        fontSize: "1.1rem",
+                        fontSize: isMobile ? "1rem" : "1.1rem",
                         lineHeight: 1.7,
                         maxWidth: 480,
                         color: "#2A5A7A",

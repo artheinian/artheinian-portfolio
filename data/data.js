@@ -15,6 +15,7 @@ export const SKILLS = {
         { name: "Figma" }, { name: "Postman" }, { name: "Android Studio" },
         { name: "Visual Studio" }, { name: "Visual Studio Code" }, { name: "LINQ" },
         { name: "Apache Tomcat" }, { name: "IntelliJ IDEA" }, { name: "VMWare" },
+        { name: "Firebase" },
     ],
     "General": [
         { name: "Customer Service" }, { name: "Communication" }, { name: "Teamwork" },

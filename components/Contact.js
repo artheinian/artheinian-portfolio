@@ -18,6 +18,7 @@ export default function Contact() {
     const socials = [
         { label: "LinkedIn ↗", href: "https://linkedin.com/in/artheinian" },
         { label: "GitHub ↗", href: "https://github.com/artheinian" },
+        { label: "Resume ↗", href: "/Artheinian Resume (5).pdf" },
     ];
 
     return (

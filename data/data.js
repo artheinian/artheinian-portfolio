@@ -8,7 +8,7 @@ export const SKILLS = {
         { name: "React / Next.js" }, { name: "ASP.NET Core" }, { name: "Flutter" },
         { name: "Django" }, { name: "Entity Framework" }, { name: "Node.js" },
         { name: "Blazor" }, { name: "Bootstrap" }, { name: "Tailwind" },
-        { name: "Material UI" },
+        { name: "Material UI" }, { name: "xUnit" },
     ],
     "Tools & DBs": [
         { name: "Git / GitHub" }, { name: "PostgreSQL" }, { name: "MySQL" },
@@ -31,9 +31,10 @@ export const PROJECTS = [
         summary: "AI annotation tool with canvas-based UI",
         description: "Capstone project — an AI training data platform with a fully interactive canvas for labelling camera imagery and measuring annotation quality.",
         bullets: [
-            "Designed mode-aware toolbar: Cursor / Draw / Move / Delete with dynamic resize handles",
-            "Contributed to training data pipelines improving AI annotation accuracy to ~80%",
-            "Built label aggregation utilities producing snapshot-level health scores",
+            "Contributed to YOLO-based computer vision workflows by improving annotation data quality and supporting model training preparation",
+            "Designed a mode-aware annotation toolbar with Cursor, Draw, Move, and Delete functionality, including dynamic resize handles for more precise bounding box editing",
+            "Improved training data pipelines to strengthen annotation consistency and help raise model-supporting data quality to approximately 80%",
+            "Developed label aggregation utilities that computed snapshot-level health scores, enabling clearer analysis of annotated image datasets"
         ],
         github: null,
         note: "Under NDA - no public source code or internal application screens can be shared",
@@ -81,13 +82,16 @@ export const PROJECTS = [
         summary: "Local café  drink tracker ",
         description: "Personal café drink tracking app where users can save and organize drinks they have tried, rate them, write notes, and explore cafés.",
         bullets: [
-            "Built a drink logging system where users can save drink name, café name, rating, visit date, and personal notes",
-            "Designed filtering and sorting features so users can quickly browse entries by date, rating, or café",
-            "Planned optional local café discovery and review-sharing features to expand the app beyond personal trackin",
+            "Built a full-stack web application for tracking café drinks, allowing users to log and manage entries with café details, ratings, notes, and categories",
+            "Implemented authenticated, user-specific data management with persistent storage so each user can securely manage their own drink entries",
+            "Planned scalable feature expansions including café location discovery, map-based navigation, and optional community sharing for reviews and recommendations"
         ],
         github: "https://github.com/artheinian/cafe-log",
-        note: "IN PRODUCTION!!!",
-        preview: null
+        preview: "gallery",
+        previewImages: [
+            "/images/cafe-login.png",
+            "/images/cafe-log-homepage.png"
+        ]
     },
 ];
 
@@ -103,7 +107,7 @@ export const COURSES = [
     "Web-Application Design", "System Foundations", "Database Management",
     "Front-End Development", "Application Development", "Mobile App Development",
     "Business Systems", "Advanced Communication", "Enterprise Application Development",
-    "Project Essentials",
+    "Project Essentials", "Business Intelligence",
 ];
 
 export const NAV_ITEMS = ["about", "skills", "experience", "projects", "contact"];

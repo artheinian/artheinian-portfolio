@@ -61,9 +61,10 @@ export default function Experience() {
                             </div>
                             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                                 {[
-                                    "Designed mode-aware toolbar (Cursor / Draw / Move / Delete) with dynamic resize handles",
-                                    "Improved AI annotation accuracy to ~80% through data pipeline contributions",
-                                    "Built label aggregation utilities producing camera snapshot health scores",
+                                    "Contributed to YOLO-based computer vision workflows by improving annotation data quality and supporting model training preparation",
+                                    "Designed a mode-aware annotation toolbar with Cursor, Draw, Move, and Delete functionality, including dynamic resize handles for more precise bounding box editing",
+                                    "Improved training data pipelines to strengthen annotation consistency and help raise model-supporting data quality to approximately 80%",
+                                    "Developed label aggregation utilities that computed snapshot-level health scores, enabling clearer analysis of annotated image datasets"
                                 ].map((b, i) => (
                                     <li key={i} style={{ display: "flex", gap: 8, fontSize: 12, lineHeight: 1.6, color: "#2A5A7A", marginBottom: 8 }}>
                                         <span style={{ color: "#1A99BB", flexShrink: 0, marginTop: 2 }}>▸</span>

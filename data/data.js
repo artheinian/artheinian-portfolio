@@ -93,6 +93,23 @@ export const PROJECTS = [
             "/images/cafe-log-homepage.png"
         ]
     },
+    {
+        id: "type-it",
+        title: "Type It",
+        tag: "Web app",
+        year: "Jan 2026 - Present",
+        accent: "#87388e",
+        tech: ["TypeScript", "Next.js", "React", "Socket.IO", "Node.js", "Express", "CSS"],
+        summary: "Multiplayer typing race game with solo and lobby-based race modes.",
+        description:
+            "Browser-based typing race game where users can create or join lobbies, ready up, start races with a countdown, and compete in solo or multiplayer typing matches.",
+        bullets: [
+            "Built a typing race web app with lobby creation, room codes, ready-state flow, and race start countdown for solo and multiplayer play",
+            "Designed responsive race interfaces with a retro-styled lobby, prompt display, typing input, live progress tracking, and runner movement tied to typing progress",
+            "Integrated real-time room and race state handling with Socket.IO and Express to manage players, prompts, progress updates, and race completion events"
+        ],
+        github: "https://github.com/artheinian/my-type-racer",
+    }
 ];
 
 export const TIMELINE = [
